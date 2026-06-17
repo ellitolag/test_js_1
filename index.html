@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Тесты ЭПУ в ИУС</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="test-header">
+        <div class="header-glow"></div>
+        <h1>⚡ Тесты ЭПУ в ИУС</h1>
+    </div>
+
+    <!-- Прогресс-бар и статистика -->
+    <div class="progress-section">
+        <div class="progress-stats">
+            <span class="counter" id="answeredCounter">
+                <span class="counter-icon">📋</span> 0 / 113 отвечено
+            </span>
+            <span class="score-preview" id="previewScore">
+                <span class="score-icon">🎯</span> правильных: 0
+            </span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="progressBarFill" style="width: 0%">
+                <div class="progress-glow"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Карточка текущего вопроса -->
+    <div class="question-card" id="questionCard">
+        <div class="card-glow"></div>
+        <div class="question-header">
+            <div class="q-num-wrapper">
+                <span class="q-num" id="questionNum">1</span>
+                <div class="q-num-pulse"></div>
+            </div>
+            <div class="q-text" id="questionText">Загрузка...</div>
+        </div>
+        <div class="options-area" id="optionsArea"></div>
+
+        <!-- Кнопка проверки -->
+        <div class="check-answer-container">
+            <button class="check-btn" id="checkBtn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+                Проверить ответ
+            </button>
+        </div>
+
+        <div class="question-status" id="questionStatus"></div>
+    </div>
+
+    <!-- Кнопки навигации -->
+    <div class="nav-buttons">
+        <button class="nav-btn prev-btn" id="prevBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            Предыдущий
+        </button>
+        <button class="nav-btn skip-btn" id="skipBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 4l10 8-10 8V4z"/><path d="M19 5v14"/></svg>
+            Пропустить
+        </button>
+        <button class="nav-btn next-btn" id="nextBtn">
+            Следующий
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+    </div>
+
+    <!-- Дополнительные кнопки -->
+    <div class="action-bar">
+        <button class="secondary" id="resetBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+            Сбросить все ответы
+        </button>
+        <button class="primary" id="submitBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            Завершить тест
+        </button>
+    </div>
+
+    <!-- Панель навигации по вопросам -->
+    <div class="nav-panel">
+        <div class="nav-panel-title">
+            <span class="nav-panel-icon">📌</span>
+            Быстрая навигация
+            <span class="nav-panel-hint">(нажмите на номер вопроса)</span>
+        </div>
+        <div class="question-nav-grid" id="questionNavGrid"></div>
+    </div>
+
+    <!-- Результат -->
+    <div id="resultBlock" class="result-area" style="display: none;"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
